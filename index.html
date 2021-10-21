@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <title>CLASS</title>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Rides</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="img" class="form-label">Upload Image Of Ride</label>
+                <input placeholder="image.com" type="url" class="form-control" id="imageurl" aria-describedby="text">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Ride Name:</label>
+                <input  type="text" class="form-control" id="studentname" aria-describedby="text">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter Capacity of Ride</label>
+                <input placeholder="eg.30" type="number" class="form-control" id="registernumber">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Availability</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Available</option>
+                    <option value="2">Not Available</option>
+                    <option value="3">Under Construction</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Wonderland Park</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us!</a>
+              </li>
+            </ul>
+          </div>
+          <div class="Add New Ride">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-person-plus mr-2"></i>Add Ride</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- mainsection -->
+    <main class="container-fluid" role="main">
+      <section class="container-fluid" id="caurosel">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" >
+              <img src="assets\Rides (7).jpg" class="d-block w-100" alt="">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fs-1">First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" >
+              <img src="assets\Rides (2).jpg" class="d-block w-100" alt="">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fs-1">Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets\Rides (9).jpg" class="d-block w-100" alt="">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fs-1">Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- cardSection -->
+      <section class="container-fluid mt-5" id="cards">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="card border-2 mb-3" style="border-color: black; max-width: 20rem;">
+              <div class="card-header bg-transparen d-flex justify-content-end border-success ">
+                <button type="button" class="btn btn-outline-info"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+              </div>
+              <div class="card-body">
+                <img style="width: 50px; height: 50px;" src="assets\abstract-user-flat-4.svg" alt="">
+                <h5 class="card-title">B.Hemnath</h5>
+                <h3>212219040046</h3>
+                <span id="present" style="display: none;" class="badge bg-success">Present</span>
+                <span id="absent" style="display: none;" class="badge bg-danger">Absent</span>
+              </div>
+              <div class="card-footer d-flex justify-content-between  bg-transparent border-success">
+                <div>
+                  <button onclick="Present()"  type="button" class="btn btn-outline-success btn-sm">Present</button>
+                  <button onclick="Absent()"  type="button" class="btn btn-outline-danger btn-sm">Absent</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm">Save Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
