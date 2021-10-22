@@ -3,6 +3,7 @@ const cardgeneration=document.getElementById("cardgeneration");
 
 const addCard = () =>{
     const newCard_details = {
+        id:`${Date.now()}`,
         imageurl:document.getElementById("imageurl").value,
         ridename:document.getElementById("ridename").value,
         capacity:document.getElementById("capacity").value,
@@ -15,13 +16,13 @@ const addCard = () =>{
     savetolocalstorage();
 
 }
-const generateCard= ({imageurl, ridename, capacity ,availability}) =>{
+const generateCard= ({id, imageurl, ridename, capacity ,availability}) =>{
     return (
-    `<div class="col-md-6 col-lg-3">
+    `<div class="col-md-6 col-lg-3" id=${id}>
             <div class="card border-2 mb-3" style="border-color: black; max-width: 20rem;">
             <div class="card-header bg-transparen d-flex justify-content-end border-success ">
                 <button type="button" class="btn btn-outline-info"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-outline-danger" name=${id} onclick="deleteCard(this)" ><i  class="bi bi-trash"></i></button>
             </div>
             <div class="card-body">
                 <img style="width: 100%; height: 200px;" src=${imageurl} alt="">
@@ -51,4 +52,12 @@ const reloading_storage = ()=>{
     globaldata.map((ridedata) => {
         cardgeneration.insertAdjacentHTML("beforeend",generateCard(ridedata));
     })
+}
+
+const deleteCard = (e)=>{
+    const targetid = e.getAttribute("name");
+    console.log(targetid);
+    globaldata=globaldata.filter((id)=>id.id!=targetid);
+    savetolocalstorage();
+    window.location.reload();
 }
