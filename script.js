@@ -9,14 +9,14 @@ const addCard = () => {
     capacity: document.getElementById("capacity").value,
     availability: document.getElementById("availability").value,
   };
-
+  console.log(availability)
   cardgeneration.insertAdjacentHTML("beforeend", generateCard(newCard_details));
   globaldata.push(newCard_details);
   savetolocalstorage();
 };
 const generateCard = ({ id, imageurl, ridename, capacity, availability }) => {
   return `<div class="col-md-6 col-lg-3" id=${id}>
-            <div class="card border-2 mb-3" style="border-color: black; max-width: 20rem;">
+            <div  class="card border-2 mb-3 cards" style="background-color: #c7f1ff; border-color: black; max-width: 20rem;">
                 <div class="card-header bg-transparen d-flex justify-content-end border-success ">
                     <button type="button" class="btn btn-outline-info" name=${id} onclick="editCard(this)"><i class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn btn-outline-danger" name=${id} onclick="deleteCard(this)" ><i  class="bi bi-trash"></i></button>
@@ -53,6 +53,7 @@ const reloading_storage = () => {
     cardgeneration.insertAdjacentHTML("beforeend", generateCard(ridedata));
   });
   
+  
 };
 
 const deleteCard = (e) => {
@@ -66,8 +67,6 @@ const deleteCard = (e) => {
 const editCard = (e) => {
   const targetid = e.getAttribute("name");
   console.log(targetid);
-  // console.log(e.parentNode.parentNode.childNodes[3].childNodes[1].setAttribute("contenteditable",true))
-  console.log(e.parentNode.parentNode.childNodes[3].childNodes);
   e.parentNode.parentNode.childNodes[3].childNodes[3].childNodes[3].setAttribute("contenteditable",true);
   e.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[1].setAttribute("contenteditable",true);
   e.parentNode.parentNode.childNodes[3].childNodes[7].childNodes[1].setAttribute("contenteditable",true);
@@ -96,6 +95,10 @@ const saveEditTask = (e) => {
         }
       : card
   );
+
+  e.parentNode.parentNode.childNodes[3].childNodes[3].childNodes[3].setAttribute("contenteditable",false);
+  e.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[1].setAttribute("contenteditable",false);
+  e.parentNode.parentNode.childNodes[3].childNodes[7].childNodes[1].setAttribute("contenteditable",false);
 
   globaldata = stateCopy;
   console.log(updatedData);
